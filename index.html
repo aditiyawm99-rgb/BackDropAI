@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BackDropAI — Penghapus Background Foto</title>
+
+    <meta name="description" content="Hapus background foto dengan bantuan AI. Unggah foto, proses otomatis, dan simpan hasilnya dalam format PNG transparan.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">B</span>
+            <span>BackDrop<span class="logo-highlight">AI</span></span>
+        </a>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang</a>
+        </nav>
+
+        <a href="#editor" class="nav-button">Mulai Gratis ↗</a>
+    </header>
+
+    <main>
+        <section class="hero" id="beranda">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                AI Background Remover
+            </div>
+
+            <h1>
+                Hapus Background.<br>
+                <span>Biarkan Foto Bersinar.</span>
+            </h1>
+
+            <p class="hero-description">
+                Hapus latar belakang foto dengan bantuan AI.
+                Praktis, mudah digunakan, dan gratis di perangkatmu.
+            </p>
+
+            <div class="features">
+                <span>✓ Tanpa API berbayar</span>
+                <span>✓ Hasil PNG transparan</span>
+                <span>✓ Mudah digunakan</span>
+            </div>
+        </section>
+
+        <section class="editor-section" id="editor">
+            <div class="editor-card">
+                <div class="editor-heading">
+                    <div>
+                        <h2>Hapus Background Foto</h2>
+                        <p>Unggah foto untuk memulai proses.</p>
+                    </div>
+
+                    <span class="ai-label">✦ AI POWERED</span>
+                </div>
+
+                <div class="upload-area" id="upload-area">
+                    <input
+                        type="file"
+                        id="image-input"
+                        accept="image/png,image/jpeg,image/webp"
+                        hidden
+                    >
+
+                    <div class="upload-content" id="upload-content">
+                        <div class="upload-icon">↑</div>
+
+                        <h3>Pilih foto kamu</h3>
+
+                        <p>
+                            Seret foto ke sini atau
+                            <button type="button" id="choose-button" class="text-button">
+                                pilih file
+                            </button>
+                        </p>
+
+                        <span class="file-info">
+                            PNG, JPG, atau WEBP
+                        </span>
+                    </div>
+
+                    <img id="preview-image" alt="Pratinjau foto" hidden>
+                </div>
+
+                <div class="file-details" id="file-details" hidden>
+                    <span id="file-name"></span>
+                    <button type="button" id="change-button">
+                        Ganti foto
+                    </button>
+                </div>
+
+                <div class="editor-actions">
+                    <button type="button" id="remove-button" class="primary-button" disabled>
+                        <span>✦</span>
+                        Hapus Background
+                        <span class="button-arrow">→</span>
+                    </button>
+                </div>
+
+                <p class="status-message" id="status-message" role="status" aria-live="polite">
+                    Pilih foto terlebih dahulu untuk memulai.
+                </p>
+
+                <div class="result-area" id="result-area" hidden>
+    <h3>Hasil Foto</h3>
+
+    <div class="result-preview" id="result-preview">
+        <img id="result-image" alt="Foto dengan background yang dihapus">
+    </div>
+
+    <h4>Pilih Background</h4>
+
+    <div class="background-options">
+        <button type="button" class="color-option active" data-color="transparent">
+            Transparan
+        </button>
+
+        <button type="button" class="color-option" data-color="#ffffff">
+            Putih
+        </button>
+
+        <button type="button" class="color-option" data-color="#000000">
+            Hitam
+        </button>
+
+        <button type="button" class="color-option" data-color="#ff0000">
+            Merah
+        </button>
+
+        <button type="button" class="color-option" data-color="#0000ff">
+            Biru
+        </button>
+
+        <button type="button" class="color-option" data-color="#00aa55">
+            Hijau
+        </button>
+
+        <label>
+            Warna Kustom
+            <input type="color" id="custom-color" value="#a855f7">
+        </label>
+    </div>
+
+    <a id="download-button" class="download-button" download="backdropai-hasil.png">
+        ↓ Unduh Hasil PNG
+    </a>
+</div>
+            </div>
+
+            <p class="privacy-note">
+                🔒 Foto diproses oleh server AI lokal yang kamu jalankan sendiri.
+            </p>
+        </section>
+
+        <section class="about-section" id="tentang">
+            <div class="section-label">KENAPA BACKDROPAI?</div>
+
+            <h2>Lebih praktis untuk kebutuhan visualmu.</h2>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">✦</div>
+                    <h3>Berbasis AI</h3>
+                    <p>Model AI membantu memisahkan objek utama dari latar belakang foto.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">◈</div>
+                    <h3>Hasil Transparan</h3>
+                    <p>Simpan hasil sebagai PNG agar latar belakang tetap transparan.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">↗</div>
+                    <h3>Gratis Digunakan</h3>
+                    <p>Tidak memerlukan API berbayar. Pemrosesan menggunakan backend lokal.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#" class="logo footer-logo">
+            <span class="logo-icon">B</span>
+            <span>BackDrop<span class="logo-highlight">AI</span></span>
+        </a>
+
+        <p>© 2026 BackDropAI. Dibuat untuk mempermudah kreativitas.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
